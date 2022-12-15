@@ -54,8 +54,9 @@
 					<img src="https://kelompok17stiebi.website/storage/<?= $row["foto_kendaraan"]?>" width="50px" height="50px">
 				</td>
                 <td>
-                <a class ="detail" href="vehicleDetail.php?id=<?= $row["id"]; ?>">Detail</a> |
-                <a class ="hapus" href="model/vehicleDelete.php?id=<?= $row["id"]; ?>">Hapus</a>
+                <a class ="detail" href="?page=vehicle&aksi=detail&id=<?= $row["id"]; ?>">Detail</a> |
+                <a class ="hapus" href="page/vehicle/delete.php?id=<?= $row['id']; ?> ">Hapus</a>
+				<!-- <a class ="hapus" href="?page=vehicle&aksi=delete&id=<?= $row['id']; ?> ">Hapus</a> -->
             
                 </td>
             </tr>
@@ -75,3 +76,59 @@
 			
 			
 </main>
+
+<?php if($_SESSION['sukses']){ ?>
+            <script>
+                Swal.fire({            
+                    icon: 'success',                   
+                    title: 'Sukses',    
+                    text: 'data berhasil dihapus',                        
+                    timer: 3000,                                
+                    showConfirmButton: false
+                })
+            </script>
+        <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+<?php unset($_SESSION['sukses']); } ?>
+    
+	<!-- <script src="../../dist/jquery-3.6.1.min.js"></script>
+	
+	<script src="../../dist/sweetalert2.all.min.js"></script>    -->
+	
+        <!-- di bawah ini adalah script untuk konfirmasi hapus data dengan sweet alert  -->
+        <script>
+            $('.hapus').on('click', function(e){
+			e.preventDefault();
+			const href = $(this).attr('href')
+
+			Swal.fire({
+
+			title : 'Apakah Anda Yakin ?',
+			text : 'Data akan dihapus ',
+			type : 'warning',
+			// icon : 'warning',
+			
+			showCancelButton: true,
+			confirmButtonText: "Hapus Data",
+			confirmButtonColor: "#ff0055",
+			cancelButtonColor: "#3084d6",
+			
+			}).then((result) => {
+			// if (result.value) {
+			// document.location.href = href;
+			if(result.isConfirmed ){
+			document.location.href = href;
+			
+			Swal.fire({            
+                    icon: 'success',                   
+                    title: 'Sukses',    
+                    text: 'data berhasil dihapus',                        
+                    timer: 3000,                                
+                    showConfirmButton: false
+                })
+			// setTimeout = 10000;
+		}
+
+		// }
+		})
+		})
+</script>
