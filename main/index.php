@@ -46,7 +46,13 @@ if (!isset($_SESSION['email'])) {
 	<!-- Script Delete alert-->
 	<script src="dist/jquery-3.6.1.min.js"></script>
 	<script src="dist/sweetalert2.all.min.js"></script>
-	<script src="js/deleteAlert.js"> </script>
+	<!-- <script src="js/deleteAlert.js"> </script> -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"> -->
+    </script>
+        <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
 	<!-- script table -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>

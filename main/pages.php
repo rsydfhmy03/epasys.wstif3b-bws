@@ -13,7 +13,7 @@
                             if ($aksi == "") {
                                 include "page/vehicle/vehicleData.php";
                             }elseif ($aksi == "detail") {
-                                include "page/vehicle/details.php";
+                                include "page/vehicle/vehicleDetail.php";
                             }elseif ($aksi == "delete") {
                                 include "page/vehicle/delete.php";
                             }

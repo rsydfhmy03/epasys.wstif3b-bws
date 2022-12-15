@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/koneksi.php';
+include '../../includes/koneksi.php';
 
 function query($query) {
     global $koneksi;
