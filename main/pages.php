@@ -14,32 +14,38 @@
                                 include "page/vehicle/vehicleData.php";
                             }elseif ($aksi == "detail") {
                                 include "page/vehicle/details.php";
-                            }elseif ($aksi == "detail") {
+                            }elseif ($aksi == "delete") {
                                 include "page/vehicle/delete.php";
                             }
                         }elseif ($page == "users") {
                             if ($aksi == "") {
-                                include "page/users/users.php";
+                                include "page/users/usersData.php";
                             }elseif ($aksi == "detail") {
-                                include "page/anggota/details.php";
-                            } 
+                                include "page/users/usersDetail.php";
+                            }elseif ($aksi == "delete") {
+                                include "page/users/delete.php";
+                            }
                         }elseif ($page == "satpam") {
                             if ($aksi == "") {
-                                include "page/satpam/satpam.php";
+                                include "page/satpam/satpamData.php";
                             }elseif ($aksi == "tambah") {
-                                include "page/satpam/tambah.php";
+                                include "page/satpam/satpamAdd.php";
+                            }elseif($aksi == "detail"){
+                                include "page/satpam/satpamDetail.php";
+                            }elseif($aksi == "hapus"){
+                                include "page/satpam/delete.php";
                             }
                         }elseif ($page == "vehicleIn"){
-                            include "vehicleIn.php";
+                            include "page/vehicleIn/vehicleIn.php";
 
                         }elseif ($page == "vehicleOut"){
-                            include "vehicleOut.php";
+                            include "page/vehicleOut/vehicleOut.php";
 
                         }elseif ($page == "myProfile"){
-                            include "myProfile.php";
+                            include "page/profile/myProfile.php";
 
-                        }elseif ($page == "reports"){
-                            include "reports.php";
+                        }elseif ($page == "laporan"){
+                            include "page/laporan/reportAct.php";
                             
                         }elseif ($page == ""){
                             include "home.php";

@@ -16,20 +16,20 @@
 			<li class="divider" data-text="main">Main</li>
 
 			<li>
-			<a href="vehicleIn.php" class="<?php if($page=="vehicleIn") {echo "active";}?>">
+			<a href="?page=vehicleIn" class="<?php if($page=="vehicleIn") {echo "active";}?>">
 				<!-- <i class="bx icon"><ion-icon name="enter-outline"></ion-icon></i>Kendaraan Masuk</a> -->
 				<i class='bx bx-log-in icon'></i>Kendaraan Masuk</a>
 			</li>
 
 			<li>
-			<a href="vehicleOut.php" class="<?php if($page=="vehicleOut") {echo "active";}?>">
+			<a href="?page=vehicleOut" class="<?php if($page=="vehicleOut") {echo "active";}?>">
 				<!-- <i class='bx icon'><ion-icon name="exit-outline"></ion-icon></i>Kendaraan Keluar</a> -->
 				<i class='bx bx-log-out icon'></i>Kendaraan Keluar</a>
 				
 			</li>
 
 			<li>
-			<a href="reportAct.php" class="<?php if($page=="report") {echo "active";}?>">
+			<a href="?page=laporan" class="<?php if($page=="laporan") {echo "active";}?>">
 					<i class='bx bxs-parking icon'></i>Laporan Aktivitas</a>
 			</li>
 			
@@ -39,12 +39,12 @@
 			</li>
 
 			<li>
-			<a href="usersData.php" class="<?php if($page=="dataUsers") {echo "active";}?>">
+			<a href="?page=users" class="<?php if($page=="users") {echo "active";}?>">
 					<i class='bx bxs-group icon' ></i>Data Users</a>
 			</li>
 			
 			<li>
-			<a href="satpamData.php" class="<?php if($page=="dataSatpam") {echo "active";}?>">
+			<a href="?page=satpam" class="<?php if($page=="satpam") {echo "active";}?>">
 				<i class='bx bx-shield-quarter icon'></i>Data Satpam</a>
 			</li>
 

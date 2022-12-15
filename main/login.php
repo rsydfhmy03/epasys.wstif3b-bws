@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="popup_style.css">
+	<link rel="stylesheet" href="LoginAssets/css/pop_up.css">
 </head>
 <body>
 <?php 
@@ -31,45 +31,24 @@
 			window.location="index.php";
 			</script> -->
 		<?php
-	
-        }
-    }
-    ?>
-<?php 
-    if(isset($_GET['pesan'])){
-        if($_GET['pesan']=="gagal"){
-            // echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
-			// $alert ="<script>
-			// 	Swal({
-			// 		title: 'Error!',
-			// 		text: 'Username dan password anda tidak sesuai',
-			// 		type: 'warning'
-			// 	  })
-			//  </script>";
-			// $alert ="<script>alert('Username dan Password tidak sesuai') </script>";
-			// echo $alert;
+        }elseif ($_GET['pesan']=="gagal") {
 			?>
-		<div class="popup popup--icon -error js_error-popup popup--visible">
-		<div class="popup__background"></div>
-		<div class="popup__content">
-			<h3 class="popup__content__title">
-			Error 
-			</h3>
-			<p>Invalid Email or Password</p>
-			<p>
-			
-			<button class="button button--error" data-for="js_error-popup"><a style="color:white;" href="login.php">Close</button></a>
-			
-			</p>
-		</div>
-		</div>
-       <!--  <script> 
-       // alert("Invalid email or Password!");
-        window.location="login.php";
-        </script> -->
-        <?php
-	
-        }
+			<div class="popup popup--icon -error js_error-popup popup--visible">
+			<div class="popup__background"></div>
+			<div class="popup__content">
+				<h3 class="popup__content__title">
+				Error 
+				</h3>
+				<p>Invalid Email or Password</p>
+				<p>
+				
+				<button class="button button--error" data-for="js_error-popup"><a style="color:white;" href="login.php">Close</button></a>
+				
+				</p>
+			</div>
+			</div>
+			<?php
+		}
     }
     ?>
 
@@ -88,7 +67,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Email</h5>
-           		   		<input type="email" class="input" name="email" required>
+           		   		<input type="email" class="input" name="email" required autocomplete="">
            		   </div>
            		</div>
            		<div class="input-div pass">
