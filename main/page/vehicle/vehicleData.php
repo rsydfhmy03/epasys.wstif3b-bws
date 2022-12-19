@@ -39,10 +39,14 @@
         <tbody>
 			<?php $i =1;?>
             <?php 
-            include 'functions.php';
-			$data = query("SELECT * FROM vechiles");
-            
-			foreach($data as $row) :
+            // include 'functions.php';
+			// $data = query("SELECT * FROM vechiles");
+            include 'vehicle.php';
+			// $data = query("SELECT * FROM vechiles");
+            $data = new vehicle();
+			$result= $data->query("SELECT * FROM vechiles ORDER BY id DESC");
+			// var_dump($result);
+			foreach($result as $row) :
 				// while ($row = mysqli_fetch_assoc($result)) :
             ?>
             <tr>

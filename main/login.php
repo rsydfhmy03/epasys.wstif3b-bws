@@ -8,6 +8,16 @@
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="LoginAssets/css/pop_up.css">
+	<?php 
+	session_start();
+	include_once 'auth.php';
+	$user = new auth();
+	 
+	if ($user->get_session())
+	{
+		header("location:index.php");
+	}
+	?>
 </head>
 <body>
 <?php 
@@ -58,7 +68,7 @@
 			<img src="LoginAssets/img/bgLogin.svg">
 		</div>
 		<div class="login-content">
-			<form action="cek_login.php" method="post">
+			<form action="auth.php" method="post">
 				<img src="LoginAssets/img/Ic.png">
 				<h3 class="title">Welcome to Epasys </h3>
            		<div class="input-div one">

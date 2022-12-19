@@ -32,8 +32,8 @@
                                 include "page/satpam/satpamAdd.php";
                             }elseif($aksi == "detail"){
                                 include "page/satpam/satpamDetail.php";
-                            }elseif($aksi == "hapus"){
-                                include "page/satpam/delete.php";
+                            }elseif($aksi == "update"){
+                                include "page/satpam/satpamUpdate.php";
                             }
                         }elseif ($page == "vehicleIn"){
                             include "page/vehicleIn/vehicleIn.php";

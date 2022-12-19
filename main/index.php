@@ -1,9 +1,10 @@
 <?php
 session_start();
 error_reporting(0);
-include('koneksi.php');
+include('includes/koneksi.php');
+include('auth.php');
 error_reporting(0);
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['role'])) {
     header("Location: logout.php");
 }
 ?>

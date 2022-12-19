@@ -39,10 +39,13 @@
         <tbody>
 			<?php $i =1;?>
             <?php 
-            include 'functions.php';
-			$data = query("SELECT * FROM employees WHERE role='SATPAM'");
-            
-			foreach($data as $row) :
+            // include 'functions.php';
+			// $data = query("SELECT * FROM employees WHERE role='SATPAM'");
+            include 'satpam.php';
+			// $data = query("SELECT * FROM vechiles");
+            $data = new satpam();
+			$result= $data->query("SELECT * FROM employees WHERE role='SATPAM' ORDER BY id DESC");
+			foreach($result as $row) :
 				// while ($row = mysqli_fetch_assoc($result)) :
             ?>
             <tr>
@@ -52,8 +55,8 @@
 				<td><?= $row["alamat"]?></td>
 				<td><img src="<?= $row["avatar"]?>" width="50px" height="50px"></td>
                 <td>
-                <a href="">Detail</a> |
-                <a href="">Hapus</a>
+                <a class ="detail" href="?page=satpam&aksi=detail&id=<?= $row["id"]; ?>">Detail</a> |
+                <a class ="hapus" href="page/satpam/delete.php?id=<?= $row['id']; ?> ">Hapus</a>
             
                 </td>
             </tr>
@@ -72,3 +75,65 @@
 	</div>
 			
 </main>
+
+
+<?php if($_SESSION['sukses']){ ?>
+            <script>
+                Swal.fire({            
+                    icon: 'success',                   
+                    title: 'Sukses',    
+                    text: 'data berhasil dihapus',                        
+                    timer: 3000,                                
+                    showConfirmButton: false
+                })
+            </script>
+        <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+<?php unset($_SESSION['sukses']); } ?>
+    
+	<!-- <script src="../../dist/jquery-3.6.1.min.js"></script>
+	
+	<script src="../../dist/sweetalert2.all.min.js"></script>    -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"> -->
+    </script>
+        <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
+        <!-- di bawah ini adalah script untuk konfirmasi hapus data dengan sweet alert  -->
+        <script>
+            $('.hapus').on('click', function(e){
+			e.preventDefault();
+			const href = $(this).attr('href')
+
+			Swal.fire({
+
+			title : 'Apakah Anda Yakin ?',
+			text : 'Data akan dihapus ',
+			type : 'warning',
+			// icon : 'warning',
+			
+			showCancelButton: true,
+			confirmButtonText: "Hapus Data",
+			confirmButtonColor: "#ff0055",
+			cancelButtonColor: "#3084d6",
+			
+			}).then((result) => {
+			// if (result.value) {
+			// document.location.href = href;
+			if(result.isConfirmed ){
+			document.location.href = href;
+			
+			Swal.fire({            
+                    icon: 'success',                   
+                    title: 'Sukses',    
+                    text: 'data berhasil dihapus',                        
+                    timer: 3000,                                
+                    showConfirmButton: false
+                })
+			// setTimeout = 10000;
+		}
+
+		// }
+		})
+		})
+</script>
