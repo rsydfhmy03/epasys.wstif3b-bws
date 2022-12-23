@@ -210,7 +210,7 @@ include 'satpam.php';
       $data = new satpam();
     //   $result= $data->query("SELECT * FROM users WHERE id=$id")[0];
         $result= $data->query("SELECT * FROM employees WHERE role='SATPAM' AND id=$id")[0];
-    //   var_dump($result);
+      // var_dump($result);
 
 ?>
 <main>
@@ -223,11 +223,11 @@ include 'satpam.php';
 						</li>
                         <li><i class='bx bx-chevron-right' ></i></li>
                         <li>
-							<a href="#">Data Users</a>
+							<a href="#">Data Satpam</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Detail Mahasiswa</a>
+							<a class="active" href="#">Detail Satpam</a>
 						</li>
 					</ul>
 				</div>
@@ -238,7 +238,9 @@ include 'satpam.php';
 			</div>
 <div class="wrapper">
     <div class="left">
-        <img src="https://s3.zerochan.net/240/45/30/2649045.jpg" 
+        <!-- <img src="https://s3.zerochan.net/240/45/30/2649045.jpg" 
+        alt="user" width="60%" height="70%"> -->
+        <img src="assets/images/default_avatar.jpg" 
         alt="user" width="60%" height="70%">
         <!-- <img src="https://images7.alphacoders.com/333/333852.jpg" 
         alt="user" width="90%"> -->
@@ -280,7 +282,7 @@ include 'satpam.php';
       
       <!-- <input type="submit" value="Kembali" name="update_profile" class="btn"> -->
       <!-- <button class="btn-up" >Update</button> -->
-      <a href="?page=satpam&aksi=update&id=<?= $row["id"]; ?>" class="btn-up">Update</a>
+      <a href="?page=satpam&aksi=update&id=<?= $result["id"]; ?>" class="btn-up">Update</a>
       <a href="?page=satpam" class="btn">Kembali</a>
       <!-- <button class="btn" >Kembali</button> -->
       <!-- <a href="home.php" class="delete-btn">go back</a> -->

@@ -25,7 +25,7 @@ if (!isset($_SESSION['role'])) {
 <body>
 
 <?php
-		$page="dashboard";
+		// $page="dashboard";
 		include 'includes/sidebar.php'
 ?>
 

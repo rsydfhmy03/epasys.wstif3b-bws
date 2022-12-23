@@ -1,3 +1,33 @@
+<style>
+	.hapus{
+		border: 2px solid #FCE4EC;
+		text-align: center;
+		justify-content: center;
+		color: #FFFFFF;
+		background: #db5d59 no-repeat 5px;
+		height: 10%;
+		display: inline;
+		width: fit-content;
+		/* padding-left: 1px;
+		padding-top: 3px;  */
+		border-radius: 5px;
+  		padding:5px 10px;
+	}
+	.detail{
+		border: 2px solid #E1F5FE;
+		text-align: center;
+		justify-content: center;
+		color: #FFFFFF;
+		background: #0277BD no-repeat 5px;
+		height: 10%;
+		display: inline;
+		width: fit-content;
+		/* padding-left: 1px;
+		padding-top: 3px;  */
+		border-radius: 5px;
+  		padding:5px 10px;
+	}
+</style>
 <main>
 			<div class="head-title">
 				<div class="left">
@@ -61,7 +91,7 @@
 				<td><img src="https://kelompok17stiebi.website/storage/<?= $row["avatar"]?>" width="50px" height="50px"></td>
                 
                 <td>
-                <a class ="detail" href="?page=users&aksi=detail&id=<?= $row["id"]; ?>">Detail</a> |
+                <a class ="detail" href="?page=users&aksi=detail&id=<?= $row["id"]; ?>">Detail</a> 
                 <a class ="hapus" href="page/users/delete.php?id=<?= $row['id']; ?> ">Hapus</a>
             
                 </td>

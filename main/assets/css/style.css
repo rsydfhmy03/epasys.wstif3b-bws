@@ -429,6 +429,10 @@ nav .profile .profile-link a:hover {
 	background: var(--light-orange);
 	color: var(--orange);
 }
+#content main .box-info li:nth-child(4) .bx {
+	background: var(--light-green);
+	color: var(--orange);
+}
 #content main .box-info li .text h3 {
 	font-size: 24px;
 	font-weight: 600;
@@ -894,3 +898,4 @@ main .btn-send:hover {
 		display: none;
 	}
 }
+

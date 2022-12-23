@@ -1,4 +1,5 @@
 <main>
+
 			<div class="head-title">
 				<div class="left">
 					<h1><?php include 'includes/greetings.php'?>, Administrator</h1>
@@ -31,7 +32,7 @@
 					<!-- <i class="bx"><ion-icon name="enter-outline"></ion-icon></i> -->
 					<span class="text">
 					<?php include 'counters/invehicles_count.php'?> 
-						<h3><?php echo $count_parkings ;?></h3>
+						<h3>80</h3>
 						<p>Kendaraan Masuk</p>
 					</span>
 				</li>
@@ -43,6 +44,14 @@
 						<p>Kendaraan Keluar</p>
 					</span>
 				</li>
+				<!-- <li>
+					<i class='bx bx-log-out' ></i>
+					<i class='bx'><ion-icon name="exit-outline"></ion-icon></i> -->
+					<!-- <span class="text">
+						<h3>20</h3>
+						<p>Data Pengguna</p>
+					</span>
+				</li>  -->
 			</ul>
 
 
@@ -50,8 +59,8 @@
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Grafik Aktivitas Parkir</h3>
-						<i class='bx bx-search' ></i>
+						<h3>Riwayat Parkir</h3>
+						<!-- <i class='bx bx-search' ></i> -->
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
@@ -59,6 +68,13 @@
 					</table>
 				</div>
 
-				
-			</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Aktivitas Parkir</h3>
+						<!-- <i class='bx bx-plus' ></i> -->
+						<i class='bx bx-filter' ></i>
+					</div>
+					
+				</div>
+			
 </main>

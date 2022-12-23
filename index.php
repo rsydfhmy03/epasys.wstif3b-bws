@@ -146,7 +146,7 @@
                                 <i class="fa fa-motorcycle text-white fs-4"></i>
 
                             </div>
-                            <h5 class="mb-3">Data Kendaraan</h5>
+                            <h5 class="mb-3">Aktivitas Parkir</h5>
                             <p class="m-0">Fitur untuk pengecekan data kendaraan selama aktivitas parkir</p>
                         </div>
                     </div>
@@ -312,7 +312,7 @@
                     </div>
                     <div class="testimonial-item rounded p-4">
                         <div class="d-flex align-items-center mb-4">
-                            <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="img/testimonial_11.jpg" style="width: 85px; height: 85px;">
+                            <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="img/icIndra.JPG" style="width: 85px; height: 85px;">
                             <div class="ms-4">
                                 <h5 class="mb-1">Indra prasetyo</h5>
                                 <p class="mb-1">Informatika 2021</p>

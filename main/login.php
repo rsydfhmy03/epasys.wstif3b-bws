@@ -91,7 +91,7 @@
             	</div>
             	<a href="#">Forgot Password?</a>
             	<!-- <input type="submit" class="btn" value="Login"> -->
-				<input type="submit" class="btn" value="Login" id="tombol">
+				<input type="submit" class="btn"  name="Login" id="tombol">
             </form>
         </div>
     </div>

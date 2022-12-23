@@ -226,7 +226,9 @@ include 'vehicle.php';
     <div class="left">
         <!-- <img src="https://s3.zerochan.net/240/45/30/2649045.jpg" 
         alt="user" width="60%" height="70%"> -->
-        <img src="https://images7.alphacoders.com/333/333852.jpg" 
+        <!-- <img src="https://images7.alphacoders.com/333/333852.jpg" 
+        alt="user" width="90%"> -->
+        <img src="assets/images/default_vehicle.jpg" 
         alt="user" width="90%">
         <!-- <img src="<?= $result["foto_kendaraan"]?>" 
         alt="user" width="90%" alt="foto_kendaraan"> -->
