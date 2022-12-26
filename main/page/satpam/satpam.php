@@ -39,30 +39,7 @@ class satpam{
     }
 
     function ubah($data) {
-        global $koneksi;
-
-        $id = $data["id"];
-        $nama = htmlspecialchars($data["nama"]);
-        $email = htmlspecialchars($data["email"]);
-        $alamat = htmlspecialchars($data["alamat"]);
-        $role = htmlspecialchars($data["role"]);
-        $no_telepon = htmlspecialchars($data["no_telepone"]);
-        $password = htmlspecialchars($data["password"]);
-
-        $query = "UPDATE employees SET
-                nama='$nama',
-                email = '$email',
-                alamat = '$alamat',
-                role = '$role',
-                no_telepon = '$no_telepon',
-                password = '$password'
-                WHERE id = $id;
-        
-        ";
-
-        mysqli_query($koneksi , $query);
-
-        return mysqli_affected_rows($koneksi);
+ 
     }
     
 

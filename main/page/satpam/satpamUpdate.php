@@ -33,7 +33,7 @@
 }
 
 .btn,
-.delete-btn{
+.back-btn{
    width: 100%;
    border-radius: 5px;
    padding:10px 30px;
@@ -53,11 +53,11 @@
    background-color: var(--dark-blue);
 }
 
-.delete-btn{
+.back-btn{
    background-color: var(--red);
 }
 
-.delete-btn:hover{
+.back-btn:hover{
    background-color: var(--dark-red);
 }
 
@@ -258,32 +258,43 @@
 
 <?php 
 include 'satpam.php';
+include '../../includes/koneksi.php';
 // $data = query("SELECT * FROM vechiles");
       $id = $_GET["id"];
       $data = new satpam();
     //   $result= $data->query("SELECT * FROM users WHERE id=$id")[0];
         $result= $data->query("SELECT * FROM employees WHERE role='SATPAM' AND id=$id")[0];
-      // var_dump($result);
-// if ($_SERVER["REQUEST_METHOD"] == "POST")
-// {
+ 
    if (isset($_POST["ubahSatpam"])){
       // var_dump($_POST);
-      if($data->ubah($_POST) > 0) {
+   //    if($data->ubah($_POST) > 0) {
 
-         // header('location : vehicleData.php?m=1');
-         // $_SESSION["sukses"] = 'Data Berhasil Diubah';
-     
-         // header('location:../../index.php?page=satpam');
-         echo "<script> 
-         alert('data berhasil diubah !');
-         // document.location.href = '?page=satpam';
-         </script>";
+   //       var_dump($_POST);
+   //   }
+         $koneksi;
+
+         $id = $_POST["id"];
+         $nama = htmlspecialchars($_POST["nama"]);
+         $email = htmlspecialchars($_POST["email"]);
+         $alamat = htmlspecialchars($_POST["alamat"]);
+         $role = htmlspecialchars($_POST["role"]);
+         // $no_telepon = htmlspecialchars($data["no_telepone"]);
+         $password = htmlspecialchars($_POST["password"]);
+
+         $query = "UPDATE `employees` SET
+               nama='$nama',
+               email = '$email',
+               alamat = '$alamat',
+               -- role = '$role'
+               -- no_telepon = '$no_telepon',
+               -- password = '$password'
+               WHERE `employees`.`id` = $id;
          
-        
-         
-         // //redirect ke halaman index.php
-         // header('Location: ?page=vehicle'); 
-     }
+         ";
+
+         mysqli_query($koneksi , $query);
+
+         var_dump(mysqli_affected_rows($koneksi)); 
 
 
    }
@@ -293,7 +304,7 @@ include 'satpam.php';
 
 ?>
 
-   <form action="" method="post">
+   <form action="" method="post" id="form-update">
       <?php
         //  if($result['image'] == ''){
         //     echo '<img src="assets/images/default-avatar.png">';
@@ -309,13 +320,13 @@ include 'satpam.php';
       
       <div class="flex">
          <div class="inputBox">
-            <input type="hidden" name="id" value="<?= $result["id"]?>" >
+            <input type="hidden" name="id" id="id"value="<?= $result["id"]?>" >
             <span>Nama Lengkap :</span>
-            <input type="text" name="nama" value="<?= $result["nama"]?>" class="box">
+            <input type="text" name="nama" id="nama" value="<?= $result["nama"]?>" class="box">
             <span>Email :</span>
-            <input type="email" name="email" value="<?= $result["email"]?>" class="box">
+            <input type="email" name="email" id="email" value="<?= $result["email"]?>" class="box">
             <span>Alamat :</span>
-            <input type="text" name="alamat" value="<?= $result["alamat"]?>" class="box">
+            <input type="text" name="alamat" id="alamat" value="<?= $result["alamat"]?>" class="box">
             <!-- <span>update your pic :</span>
             <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box"> -->
          </div>
@@ -335,9 +346,46 @@ include 'satpam.php';
          </div>
       </div>
       <!-- <input type="submit" name="submit" class="btn"> -->
-      <button type="submit" name="ubahSatpam" class="btn">Update</button>
-      <a href="?page=satpam" class="delete-btn">Kembali</a>
+      <button type="submit" name="ubahSatpam" class="btn" id="btn-update" value="Update">Update</button>
+      <a href="?page=satpam" class="back-btn">Kembali</a>
    </form>
 
 </div>
 </main>
+
+  <!-- Tambahkan library jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Tambahkan library SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <!-- Tambahkan script update data -->
+    <script>
+        $('.btn-update').click(function() {
+            // Ambil data dari tombol update
+            var id = $(this).data('id');
+            var nama = $(this).data('nama');
+            var email = $(this).data('email')
+            var alamat = $(this).data('alamat');
+
+            // Masukkan data ke dalam form update
+            $('#form-update').find('#id').val(id);
+            $('#form-update').find('#nama').val(nama);
+            $('#form-update').find('#email').val(email)
+            $('#form-update').find('#alamat').val(alamat);
+
+            // Tampilkan alert confirm
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin mengupdate data ini?',
+                text: "Data yang telah diupdate tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, update sekarang!'
+            }).then((result) => {
+                if (result.value) {
+                    // Submit form update jika user mengklik tombol 'Ya'
+                    $('#form-update').submit();
+                }
+            })
+        });
+    </script>
