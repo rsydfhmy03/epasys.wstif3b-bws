@@ -63,9 +63,14 @@
 						<!-- <i class='bx bx-search' ></i> -->
 						<i class='bx bx-filter' ></i>
 					</div>
-					<table>
+					<!-- <table>
 						
-					</table>
+					</table> -->
+					<div>
+					<div class="chart-content" >
+						<canvas id="myChart"></canvas>
+					</div>
+				</div>
 				</div>
 
 				<div class="todo">
@@ -78,3 +83,66 @@
 				</div>
 			
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/collect.js/4.34.3/collect.min.js" integrity="sha512-PMQSST5BbDOTPTzFifLEy01C6GUYDzWVN/+s0aopu70S6m7NPGeistFqL3EIQc8fMMzbiXULAybnI/gFV0p9LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+function getData(){
+    $.ajax({
+        type: 'GET',
+        url :'includes/chart.php',
+        data :{
+            functionName:'getDataParkir'
+        },
+        success: function(response){
+            // console.log(response)
+            let parkir = JSON.parse(response)
+            // console.log(parkir)
+
+            let hari = collect(parkir).map(function(item){
+                return item.day
+            }).all() 
+
+            // console.log(hari)
+            let jumlahParkir = collect(parkir).map(function(item){
+                return item.jumlah
+            }).all()
+            // console.log(jumlahPenduduk)
+
+
+            const ctx = document.getElementById('myChart');
+
+    // const labels = [
+
+
+    // ];
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: hari,
+            datasets: [{
+                label: 'Jumlah Parkir',
+                borderColor : '#54321',
+                backgroundColor : '#C0DEFF',
+                data: jumlahParkir,
+                borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+        }
+
+    })
+}
+  
+
+</script>
