@@ -79,10 +79,10 @@
                         <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
                             <div class="owl-carousel screenshot-carousel">
                                 <img class="img-fluid" src="img/screenshot-1.png" alt="">
-                                <img class="img-fluid" src="img/screenshot2.png" alt="">
-                                <img class="img-fluid" src="img/screenshot-1.png" alt="">
-                                <img class="img-fluid" src="img/screenshot2.png" alt="">
-                                <img class="img-fluid" src="img/screenshot-1.png" alt="">
+                                <img class="img-fluid" src="img/eps_01.jpeg" alt="">
+                                <img class="img-fluid" src="img/eps_02.jpeg" alt="">
+                                <img class="img-fluid" src="img/eps_03.jpeg" alt="">
+                                <img class="img-fluid" src="img/eps_04.jpeg" alt="">
                             </div>
                         </div>
                     </div>
@@ -193,10 +193,10 @@
                     <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
                         <div class="owl-carousel screenshot-carousel">
                             <img class="img-fluid" src="img/screenshot-1.png" alt="">
-                            <img class="img-fluid" src="img/screenshot2.png" alt="">
-                            <img class="img-fluid" src="img/screenshot-1.png" alt="">
-                            <img class="img-fluid" src="img/screenshot2.png" alt="">
-                            <img class="img-fluid" src="img/screenshot-5.png" alt="">
+                            <img class="img-fluid" src="img/eps_01.jpeg" alt="">
+                            <img class="img-fluid" src="img/eps_02.jpeg" alt="">
+                            <img class="img-fluid" src="img/eps_03.jpeg" alt="">
+                            <img class="img-fluid" src="img/eps_04.jpeg" alt="">
                         </div>
                     </div>
                 </div>

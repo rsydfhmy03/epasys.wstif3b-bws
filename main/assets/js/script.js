@@ -160,10 +160,6 @@ allProgress.forEach(item=> {
 
 
 
-
-
-
-// APEXCHART
 // var options = {
 //   series: [{
 //   name: 'series1',

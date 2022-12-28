@@ -1,8 +1,7 @@
 <?php 
- 
-    include 'includes/koneksi.php';
+    //buat zona waktu 
     date_default_timezone_set('Asia/Jakarta');
-    //Here we define out main variables 
+    //deklarasi variable 
     $welcome_string="Welcome"; 
     $numeric_date=date("G"); 
     

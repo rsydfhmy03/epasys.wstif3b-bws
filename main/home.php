@@ -1,3 +1,9 @@
+<style>
+	.chart{
+		position: relative;
+  		bottom: 0;
+	}
+</style>
 <main>
 
 			<div class="head-title">
@@ -23,8 +29,16 @@
 				<li>
 				<i class='bx bxs-parking'></i>
 					<span class="text">
-						<h3>100</h3>
+						<h3 id="total-parkir">
+						<?php
+							// panggil file total_parkir.php
+							include 'includes/total_parkir.php';
+							// tampilkan data
+							// echo '<script>document.getElementById("total-parkir").innerHTML = "' . $total_parkir . '";</script>';
+							?>
+						</h3>
 						<p>Total Parkir</p>
+						
 					</span>
 				</li>
 				<li>
@@ -32,7 +46,12 @@
 					<!-- <i class="bx"><ion-icon name="enter-outline"></ion-icon></i> -->
 					<span class="text">
 					<?php include 'counters/invehicles_count.php'?> 
-						<h3>80</h3>
+						<h3 id="in-parkir">
+						<?php
+							// panggil file 
+							include 'includes/total_inParkir.php';
+							?>												
+						</h3>
 						<p>Kendaraan Masuk</p>
 					</span>
 				</li>
@@ -40,18 +59,15 @@
 					<i class='bx bx-log-out' ></i>
 					<!-- <i class='bx'><ion-icon name="exit-outline"></ion-icon></i> -->
 					<span class="text">
-						<h3>20</h3>
+						<h3 id="out-parkir">
+						<?php
+							// panggil file 
+							include 'includes/total_outParkir.php';
+							?>
+						</h3>
 						<p>Kendaraan Keluar</p>
 					</span>
 				</li>
-				<!-- <li>
-					<i class='bx bx-log-out' ></i>
-					<i class='bx'><ion-icon name="exit-outline"></ion-icon></i> -->
-					<!-- <span class="text">
-						<h3>20</h3>
-						<p>Data Pengguna</p>
-					</span>
-				</li>  -->
 			</ul>
 
 
@@ -63,15 +79,13 @@
 						<!-- <i class='bx bx-search' ></i> -->
 						<i class='bx bx-filter' ></i>
 					</div>
-					<!-- <table>
-						
-					</table> -->
+					<div style="height: 15px;"></div>
 					<div>
-					<div class="chart-content" >
-						<canvas id="myChart"></canvas>
+						<div class="chart-content" >
+						<canvas class="chart" id="myChart"></canvas>
+						</div>
 					</div>
-				</div>
-				</div>
+			</div>
 
 				<div class="todo">
 					<div class="head">
@@ -79,7 +93,12 @@
 						<!-- <i class='bx bx-plus' ></i> -->
 						<i class='bx bx-filter' ></i>
 					</div>
-					
+					<div>
+						
+						<div class="chart-content" >
+						<canvas id="myChartStatus"></canvas>
+						</div>
+					</div>
 				</div>
 			
 </main>
@@ -90,6 +109,7 @@
 
 <script>
 function getData(){
+	// Bar chart activity parkir
     $.ajax({
         type: 'GET',
         url :'includes/chart.php',
@@ -114,11 +134,7 @@ function getData(){
 
             const ctx = document.getElementById('myChart');
 
-    // const labels = [
-
-
-    // ];
-
+		//bar chart activity parkir
         new Chart(ctx, {
             type: 'bar',
             data: {
@@ -141,7 +157,56 @@ function getData(){
         });
         }
 
-    })
+    }),
+	// pie chart status parkir
+	$.ajax({
+    type: 'GET',
+    url: 'includes/chart.php',
+    data: {
+      functionName: 'getStatus'
+    },
+    success: function(response) {
+    //   console.log(response)
+      let data = JSON.parse(response)
+    //   console.log(data)
+
+    //   let masuk = data.masuk
+    //   let keluar = data.keluar
+    let masuk = collect(data).map(function(item){
+        return item.masuk
+    }).all() 
+
+    let keluar = collect(data).map(function(item){
+        return item.keluar
+    }).all()
+    
+    // console.log(masuk)
+      const ctx = document.getElementById('myChartStatus');
+
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Masuk', 'Keluar'],
+          datasets: [{
+            label: 'Jumlah',
+            borderColor: '#9575CD',
+            backgroundColor: ["#03A9F4","#FF8A65"],
+            data: [masuk, keluar],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+  })
+
+
 }
   
 
