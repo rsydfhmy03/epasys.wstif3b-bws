@@ -514,13 +514,13 @@ nav .profile .profile-link a:hover {
 	border-radius: 20px;
 	font-weight: 700;
 }
-#content main .table-data .order table tr td .status.completed {
+#content main .table-data .order table tr td .status.in {
 	background: var(--blue);
 }
 #content main .table-data .order table tr td .status.process {
 	background: var(--yellow);
 }
-#content main .table-data .order table tr td .status.pending {
+#content main .table-data .order table tr td .status.out {
 	background: var(--orange);
 }
 

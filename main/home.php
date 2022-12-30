@@ -1,9 +1,3 @@
-<style>
-	.chart{
-		position: relative;
-  		bottom: 0;
-	}
-</style>
 <main>
 
 			<div class="head-title">
@@ -79,9 +73,9 @@
 						<!-- <i class='bx bx-search' ></i> -->
 						<i class='bx bx-filter' ></i>
 					</div>
-					<div style="height: 15px;"></div>
+					<div style="height: 10px;"></div>
 					<div>
-						<div class="chart-content" >
+						<div class="chart-content"  >
 						<canvas class="chart" id="myChart"></canvas>
 						</div>
 					</div>
@@ -108,6 +102,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/collect.js/4.34.3/collect.min.js" integrity="sha512-PMQSST5BbDOTPTzFifLEy01C6GUYDzWVN/+s0aopu70S6m7NPGeistFqL3EIQc8fMMzbiXULAybnI/gFV0p9LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+window.onload = getData();
+
 function getData(){
 	// Bar chart activity parkir
     $.ajax({
@@ -209,5 +205,5 @@ function getData(){
 
 }
   
-
+// window.onload = getData();
 </script>

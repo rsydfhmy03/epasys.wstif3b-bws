@@ -8,7 +8,7 @@
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Kendaraan Masuk</a>
+							<a class="active" href="#">Kendaraan Keluar</a>
 						</li>
 					</ul>
 				</div>
@@ -31,33 +31,31 @@
 			<th>No</th>
 			<th>Merek</th>
 			<th>Users</th>
-			<th>Alamat</th>
+			<th>Satpam</th>
 			<th>Foto_kendaraan</th>
 			<th>Foto_user</th>
-			<th>Waktu Masuk</th>
+			<th>Waktu Keluar</th>
             </tr>
         </thead>
         <tbody>
 			<?php $i =1;?>
             <?php 
             include 'functions.php';
-			$data = query("SELECT * FROM parkings WHERE status='OUT' ");
-            
+			$data = query("SELECT vechiles.merek, users.nama AS nama_users,employees.nama AS nama_satpam , users.alamat AS alamat_users, vechiles.foto_kendaraan, users.avatar, DATE_FORMAT(parkings.updated_at, '%H:%i') AS jam_keluar FROM parkings INNER JOIN vechiles ON parkings.id_kendaraan = vechiles.id INNER JOIN users ON vechiles.id_user = users.id INNER JOIN employees ON parkings.id_karyawan = employees.id WHERE parkings.status = 'IN' AND date(parkings.updated_at) = current_date
+			ORDER BY parkings.updated_at DESC; ");
+        
 			foreach($data as $row) :
 				// while ($row = mysqli_fetch_assoc($result)) :
             ?>
             <tr>
                 <td><?= $i ?></td>
-                <td><?= $row["nama"]?></td>
                 <td><?= $row["merek"]?></td>
-				<td><?= $row["nama"]?></td>
-				<td><?= $row["alamat"]?></td>
+                <td><?= $row["nama_users"]?></td>
+				<td><?= $row["nama_satpam"]?></td>
+				<td><img src="<?= $row["foto_kendaraan"]?>" width="50px" height="50px"></td>
 				<td><img src="<?= $row["avatar"]?>" width="50px" height="50px"></td>
-                <td>
-                <a href="">Detail</a> |
-                <a href="">Hapus</a>
-            
-                </td>
+				<td ><?= $row["jam_keluar"]?></td>
+                
             </tr>
 			<?php $i++; ?>
             <?php 

@@ -22,8 +22,8 @@ if (!isset($_SESSION['role'])) {
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 </head>
-<body onload=getData()>
-
+<!-- <body onload=getData()> -->
+<body>
 <?php
 		// $page="dashboard";
 		include 'includes/sidebar.php'

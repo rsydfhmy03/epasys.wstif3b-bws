@@ -31,13 +31,13 @@ $functionName = htmlspecialchars($_GET['functionName']);
     function getStatus(){
         global $koneksi;
         $data=[];
-        // $query = mysqli_query($koneksi, "SELECT SUM(CASE WHEN status = 'IN' THEN 1 ELSE 0 END) as masuk,
-        // SUM(CASE WHEN status = 'OUT' THEN 1 ELSE 0 END) as keluar
-        // FROM parkings 
-        // WHERE DATE(created_at) = CURDATE()");
         $query = mysqli_query($koneksi, "SELECT SUM(CASE WHEN status = 'IN' THEN 1 ELSE 0 END) as masuk,
         SUM(CASE WHEN status = 'OUT' THEN 1 ELSE 0 END) as keluar
-        FROM parkings");
+        FROM parkings 
+        WHERE DATE(created_at) = CURDATE()");
+        // $query = mysqli_query($koneksi, "SELECT SUM(CASE WHEN status = 'IN' THEN 1 ELSE 0 END) as masuk,
+        // SUM(CASE WHEN status = 'OUT' THEN 1 ELSE 0 END) as keluar
+        // FROM parkings");
         
         
          while($row = mysqli_fetch_assoc($query)){
