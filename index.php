@@ -15,7 +15,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
                     <div class="row g-5">
                         <div class="col-lg-8 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated slideInDown">Electronic Parking System </h1>
-                            <p class="text-white pb-3 animated slideInDown">Aplikasi Parkir berbasis Electronic untuk membuat proses penulisan 
+                            <p class="text-white pb-3 animated slideInDown">Aplikasi Parkir berbasis Electronic untuk membuat proses penulisan
                                 manual nomer parkir menjadi lebih efesiensi waktu dan simpel</p>
                             <a href="main/login.php" target="_blank" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Get Started</a>
                             <!-- <a href="#dwonload" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Dwonload</a> -->
@@ -153,7 +153,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="feature-item bg-light rounded p-4">
                             <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
-                            <i class="fa fa-qrcode text-white fs-4" aria-hidden="true"></i> 
+                                <i class="fa fa-qrcode text-white fs-4" aria-hidden="true"></i>
                             </div>
                             <h5 class="mb-3">Scan Qr Code</h5>
                             <p class="m-0">Fitur aktivitas parkir menggunakan Sqan Qr code</p>
@@ -205,7 +205,7 @@
         <!-- Screenshot End -->
 
 
-        
+
 
 
         <!-- Download Start -->
@@ -388,7 +388,7 @@
                                         </div> -->
                                     </div>
                                     <div class="col-12 text-center">
-                                        <button class="btn btn-primary-gradient rounded-pill py-3 px-5" type="submit"><i class="fa fa-envelope me-3"></i>Send Message</a></button>
+                                        <a class="btn btn-primary-gradient rounded-pill py-3 px-5" href="mailto:epasysdev@gmail.com ;"><i class="fa fa-envelope me-3"></i>Send Message</a>
                                     </div>
                                 </div>
                             </form>
@@ -398,7 +398,7 @@
             </div>
         </div>
         <!-- Contact End -->
-        
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -406,9 +406,9 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <h4 class="text-white mb-4">About Us</h4>
-                        <p>Epasys dikembangkan oleh mahasiswa Teknik Informatika, Politeknik Negeri Jember Kampus Bondowoso. 
+                        <p>Epasys dikembangkan oleh mahasiswa Teknik Informatika, Politeknik Negeri Jember Kampus Bondowoso.
                             Epasys bertujuan untuk mempermudah proses parkir menjadi simpel dan efesien</p>
-                        
+
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h4 class="text-white mb-4">Quick Link</h4>
@@ -430,7 +430,7 @@
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div> -->
                     </div>
- 
+
                     <div class="col-md-6 col-lg-3">
                         <h4 class="text-white mb-4">Contact Us</h4>
                         <p><i class="fa fa-phone-alt me-3"></i>+6282226079857</p>
@@ -448,9 +448,9 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">2022 Electronic Parking System (Epasys)</a>, All Right Reserved. 
-							
-							<!-- /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
+                            &copy; <a class="border-bottom" href="#">2022 Electronic Parking System (Epasys)</a>, All Right Reserved.
+
+                            <!-- /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
 							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                             </br> -->
                             <!-- Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a> -->

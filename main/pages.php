@@ -42,7 +42,7 @@
                             include "page/vehicleOut/vehicleOut.php";
 
                         }elseif ($page == "myProfile"){
-                            include "page/profile/myProfile.php";
+                            include "page/settings_profile/setprofile.php";
 
                         }elseif ($page == "laporan"){
                             include "page/laporan/reportAct.php";
@@ -50,5 +50,3 @@
                         }elseif ($page == ""){
                             include "home.php";
                         }
-
-                   ?>

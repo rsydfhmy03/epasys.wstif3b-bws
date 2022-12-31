@@ -1,9 +1,11 @@
 <?php
 include 'includes/koneksi.php';
-class auth {
+class auth
+{
 
 
-    function cekLogin($email, $password){
+    function cekLogin($email, $password)
+    {
         // $koneksi = new db_class();
         global $koneksi;
         // $email = $_POST['email'];
@@ -11,36 +13,38 @@ class auth {
         // $query = "SELECT * FROM employees where email='$email'";
         // $login = mysqli_query("select * from employees where email='$email'");
         // $login = $this->koneksi->$query($query);
-        $login = mysqli_query($koneksi,"select * from employees where email='$email'");
+        $login = mysqli_query($koneksi, "select * from employees where email='$email'");
         // menghitung jumlah data yang ditemukan
-        
+
         $cek = mysqli_num_rows($login);
-        
-        if($cek > 0){
+
+        if ($cek > 0) {
             $data = mysqli_fetch_assoc($login);
             $encpass = $data['password'];
             // cek jika user login sebagai teknisi
-            if(password_verify($password, $encpass) && $data['role']=="TEKNISI"){
+            if (password_verify($password, $encpass) && $data['role'] == "TEKNISI") {
                 // session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = "TEKNISI";
+                $_SESSION['id'] = $data['id'];
                 // $_SESSION['password']=$data['password'];
                 // header("location:index.php");
-		        // die();
+                // die();
                 return true;
-                
-            }else{
+            } else {
                 return false;
-                
-            }	
-        }else{
+            }
+        } else {
             header("location:login.php?pesan=gagal");
             return false;
- }
+        }
     }
 
-    function get_session(){
+    function get_session()
+    {
+        // global $data;
         $_SESSION['role'] = "TEKNISI";
+        // $_SESSION['id'] = $data['id'];
     }
     // public function cekLogin($email , $password){
     //     // $conn = new db_class();      
@@ -48,19 +52,16 @@ class auth {
 }
 $auth = new auth();
 // if ($_SERVER["REQUEST_METHOD"] == "POST")
-if (isset($_POST["Login"]))
-{
+if (isset($_POST["Login"])) {
     $login = $auth->cekLogin($_POST['email'], $_POST['password']);
-    if ($login)
-    {
+    if ($login) {
         // Login Success
-        // $_SESSION['email'] = $email;
+        $_SESSION['id'] = $data['id'];
+        $_SESSION['email'] = $email;
         $_SESSION['role'] = "TEKNISI";
         header("location:login.php?pesan=berhasil");
         die();
-    }
-    else
-    {
+    } else {
         // Login Failed
         header("location:login.php?pesan=gagal");
     }
