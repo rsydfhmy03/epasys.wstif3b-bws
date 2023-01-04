@@ -98,17 +98,17 @@
 											}
 
 											?>" style="width: 75px; height :60px; border-radius: 15%;"></td>
-							<!-- <td>
-					<img src="https://kelompok17stiebi.website/storage/<?= $row["foto_kendaraan"] ?>" width="50px" height="50px">
-				</td> -->
-							<td><img src="<?php
-											if ($row["foto_kendaraan"] = null) {
-												echo "https://images7.alphacoders.com/333/333852.jpg";
-											} else {
-												echo "https://cdn.antaranews.com/cache/800x533/2019/03/23/honda-ridding-assist-e.jpg" . $row["foto_kendaraan"];
-											}
+							<td>
+								<img src="<?= $row["foto_kendaraan"] ?>" style="width: 50px; height :50px; border-radius: 15%;">
+							</td>
+							<!-- <td><img src="<?php
+												if ($row["foto_kendaraan"] = null) {
+													echo "https://images7.alphacoders.com/333/333852.jpg";
+												} else {
+													echo "" . $row["foto_kendaraan"];
+												}
 
-											?>" style="width: 75px; height :60px; border-radius: 15%;"></td>
+												?>" style="width: 75px; height :60px; border-radius: 15%;"></td> -->
 							<td class="aksi">
 								<a class="detail" href="?page=vehicle&aksi=detail&id=<?= $row["id"]; ?>">Detail</a>
 								<a class="hapus" href="page/vehicle/delete.php?id=<?= $row['id']; ?> ">Hapus</a>

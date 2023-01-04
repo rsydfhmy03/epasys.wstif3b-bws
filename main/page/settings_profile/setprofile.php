@@ -139,7 +139,7 @@
             <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt="">
         </div>
         <div class="card-content">
-            <h3>Istik chan</h3>
+            <h3>Istik Lailiah</h3>
             <div class="info">
                 <h3></h3>
                 <!-- <div class="info_data">
@@ -153,10 +153,10 @@
           </div>
         </div> -->
                 <div class="card-body">
-                    <p>Email: Your Name</p>
+                    <p>Email: istiklailiah@gmail.com</p>
 
-                    <p>Phone: +6282226079857</p>
-                    <p>Alamat: Your address</p>
+                    <p>Phone: +6282335333427</p>
+                    <p>Alamat: Bondowoso</p>
                     <p>Deskripsi : Teknisi LAB AJK</p>
 
                 </div>

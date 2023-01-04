@@ -219,7 +219,8 @@ $result = $data->query("SELECT * FROM users WHERE id=$id")[0];
         alt="user" width="60%" height="70%"> -->
       <!-- <img src="https://images7.alphacoders.com/333/333852.jpg" 
         alt="user" width="90%"> -->
-      <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user">
+      <!-- <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user"> -->
+      <img src="<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user">
 
       <h4><?= $result["nama"] ?></h4>
       <p><?= $result["nim"] ?></p>
@@ -245,7 +246,8 @@ $result = $data->query("SELECT * FROM users WHERE id=$id")[0];
         <div class="info_data2">
           <div class="data">
             <h4>Tanggal Lahir</h4>
-            <p><?= $result["tanggal_lahir"] ?></p>
+            <!-- <p><?= $result["tanggal_lahir"] ?></p> -->
+            <p>29-11-2002</p>
           </div>
           <div class="data">
             <h4>Alamat</h4>

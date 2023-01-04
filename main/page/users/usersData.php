@@ -89,7 +89,8 @@
 							<td><?= $row["email"] ?></td>
 							<td><?= $row["alamat"] ?></td>
 							<td><?= $row["no_telepon"] ?></td>
-							<td><img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>" style="width: 70px; height :70px; border-radius: 15%;"></td>
+							<!-- <td><img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>" style="width: 70px; height :70px; border-radius: 15%;"></td> -->
+							<td><img src="<?= $row["avatar"] ?>" style="width: 50px; height :50px; border-radius: 15%;"></td>
 
 							<td>
 								<a class=" detail" href="?page=users&aksi=detail&id=<?= $row["id"]; ?>">Detail</a>

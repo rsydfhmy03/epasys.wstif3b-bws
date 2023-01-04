@@ -92,7 +92,8 @@
 				</div>
 				<a href="#">Forgot Password?</a>
 				<!-- <input type="submit" class="btn" value="Login"> -->
-				<input type="submit" class="btn" name="Login" id="tombol">
+				<button type="submit" class="btn" name="Login" id="tombol">Login</button>
+				<!-- <input type="submit" class="btn" name="Login" id="tombol"> -->
 			</form>
 		</div>
 	</div>
