@@ -8,7 +8,7 @@ class auth
     {
         // $koneksi = new db_class();
         global $koneksi;
-        $login = null;
+        // $login = null;
         // $email = $_POST['email'];
         // $password = $_POST['password'];
         // $query = "SELECT * FROM employees where email='$email'";
