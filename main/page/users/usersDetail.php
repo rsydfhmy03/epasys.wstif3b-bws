@@ -220,7 +220,7 @@ $result = $data->query("SELECT * FROM users WHERE id=$id")[0];
       <!-- <img src="https://images7.alphacoders.com/333/333852.jpg" 
         alt="user" width="90%"> -->
       <!-- <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user"> -->
-      <img src="<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user">
+      <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="user" width="60%" height="70%" alt="foto_user">
 
       <h4><?= $result["nama"] ?></h4>
       <p><?= $result["nim"] ?></p>

@@ -185,15 +185,15 @@ include 'vehicle.php';
 // $data = query("SELECT * FROM vechiles");
 $id = $_GET["id"];
 $data = new vehicle();
-$result = $data->query("SELECT * FROM vechiles WHERE id=$id")[0];
+$result = $data->query("SELECT * FROM vehicles WHERE id=$id")[0];
 $result = $data->query("SELECT 
-      vechiles.merek ,
-       vechiles.no_polisi, 
+      vehicles.merek ,
+       vehicles.no_polisi, 
        users.nama ,
        users.no_telepon,
-       vechiles.foto_kendaraan
+       vehicles.foto_kendaraan
       FROM `users` 
-      JOIN vechiles ON users.id = vechiles.id_user WHERE vechiles.id = $id")[0];
+      JOIN vehicles ON users.id = vehicles.id_user WHERE vehicles.id = $id")[0];
 // $result= $data->query("SELECT vechiles.id ,
 // vechiles.merek ,
 // vechiles.no_polisi, 
@@ -202,7 +202,7 @@ $result = $data->query("SELECT
 
 //  FROM users JOIN vechiles ON users.id = vechiles.id_users WHERE vechiles.id=$id")[0];
 // var_dump($result);
-//   var_dump($result);
+// var_dump($result);
 
 ?>
 <main>
@@ -223,10 +223,7 @@ $result = $data->query("SELECT
         </li>
       </ul>
     </div>
-    <!-- <a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a> -->
+
   </div>
   <div class="wrapper">
     <div class="left">
@@ -236,7 +233,7 @@ $result = $data->query("SELECT
         alt="user" width="90%"> -->
       <!-- <img src="assets/images/default_vehicle.jpg" 
         alt="user" width="90%"> -->
-      <img src="<?= $result["foto_kendaraan"] ?>" alt="user" width="90%" alt="foto_kendaraan">
+      <img src="https://berserk.my.id/storage/<?= $result["foto_kendaraan"] ?>" alt="user" width="90%" alt="foto_kendaraan">
 
       <h4><?= $result["merek"] ?></h4>
       <!-- <p>BG345TH</p> -->

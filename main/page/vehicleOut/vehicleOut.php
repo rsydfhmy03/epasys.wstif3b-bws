@@ -41,8 +41,8 @@
 					<?php $i = 1; ?>
 					<?php
 					include 'functions.php';
-					$data = query("SELECT vechiles.merek, users.nama AS nama_users,employees.nama AS nama_satpam , users.alamat AS alamat_users, vechiles.foto_kendaraan, users.avatar, DATE_FORMAT(parkings.updated_at, '%H:%i') AS jam_keluar FROM parkings INNER JOIN vechiles ON parkings.id_kendaraan = vechiles.id INNER JOIN users ON vechiles.id_user = users.id INNER JOIN employees ON parkings.id_karyawan = employees.id WHERE parkings.status = 'OUT' AND date(parkings.updated_at) = current_date
-			ORDER BY parkings.updated_at DESC; ");
+					$data = query("SELECT vehicles.merek, users.nama AS nama_users,employees.nama AS nama_satpam , users.alamat AS alamat_users, vehicles.foto_kendaraan, users.avatar, DATE_FORMAT(parkings.updated_at, '%H:%i') AS jam_keluar FROM parkings INNER JOIN vehicles ON parkings.id_kendaraan = vehicles.id INNER JOIN users ON vehicles.id_user = users.id INNER JOIN employees ON parkings.id_karyawan = employees.id WHERE parkings.status = 'OUT' AND date(parkings.updated_at) = current_date
+					ORDER BY parkings.updated_at DESC; ");
 
 					foreach ($data as $row) :
 						// while ($row = mysqli_fetch_assoc($result)) :

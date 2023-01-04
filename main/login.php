@@ -17,6 +17,9 @@
 	if ($user->get_session()) {
 		header("location:index.php");
 	}
+	// if ($user->cekLogin($email, $password)) {
+	// 	header("location:index.php");
+	// }
 	?>
 </head>
 

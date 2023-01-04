@@ -8,6 +8,7 @@ class auth
     {
         // $koneksi = new db_class();
         global $koneksi;
+        $login = null;
         // $email = $_POST['email'];
         // $password = $_POST['password'];
         // $query = "SELECT * FROM employees where email='$email'";
@@ -30,7 +31,8 @@ class auth
                 // $_SESSION['password']=$data['password'];
                 // header("location:index.php");
                 // die();
-                return true;
+                // return true;
+                return $login;
             } else {
                 return false;
             }
@@ -42,13 +44,23 @@ class auth
 
     function get_session()
     {
-        // global $data;
+
+        // $_SESSION['role'] = "TEKNISI";
+        // $login = $GLOBALS['login'];
+        // global $cek;
+        // $email = $cek['email'];
+        // $role = $cek['role'];
+        // $id = $cek['id'];
+
+        // $_SESSION['email'] = $email;
+        // $_SESSION['role'] = $role;
+        // $_SESSION['id'] = $id;
+        // $_SESSION['login'] = $_POST['Login'];
+        // var_dump($_POST);
         $_SESSION['role'] = "TEKNISI";
-        // $_SESSION['id'] = $data['id'];
+        // $_SESSION['id'] = $login['id'];
+        // return true;
     }
-    // public function cekLogin($email , $password){
-    //     // $conn = new db_class();      
-    // }
 }
 $auth = new auth();
 // if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -56,9 +68,11 @@ if (isset($_POST["Login"])) {
     $login = $auth->cekLogin($_POST['email'], $_POST['password']);
     if ($login) {
         // Login Success
-        $_SESSION['id'] = $data['id'];
-        $_SESSION['email'] = $email;
-        $_SESSION['role'] = "TEKNISI";
+        // $_SESSION['id'] = $data['id'];
+        // // $_SESSION['email'] = $email;
+        // $_SESSION['email'] = $_POST['email'];
+        // $_SESSION['role'] = "TEKNISI";
+        $auth->get_session();
         header("location:login.php?pesan=berhasil");
         die();
     } else {

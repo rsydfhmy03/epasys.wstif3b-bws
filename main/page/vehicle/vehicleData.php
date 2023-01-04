@@ -80,7 +80,7 @@
 					include 'vehicle.php';
 					// $data = query("SELECT * FROM vechiles");
 					$data = new vehicle();
-					$result = $data->query("SELECT * FROM vechiles ORDER BY id DESC");
+					$result = $data->query("SELECT * FROM vehicles ORDER BY id DESC");
 					// var_dump($result);
 					foreach ($result as $row) :
 						// while ($row = mysqli_fetch_assoc($result)) :
@@ -89,23 +89,18 @@
 							<td><?= $i ?></td>
 							<td><?= $row["merek"] ?></td>
 							<td><?= $row["no_polisi"] ?></td>
-							<!-- <td><img src="<?= $row["foto_stnk"] ?>" width="50px" height="50px"></td> -->
-							<td><img src="<?php
-											if ($row["foto_stnk"] = "") {
-												echo "https://images7.alphacoders.com/333/333852.jpg";
-											} else {
-												echo $row["foto_stnk"];
-											}
 
-											?>" style="width: 75px; height :60px; border-radius: 15%;"></td>
 							<td>
-								<img src="<?= $row["foto_kendaraan"] ?>" style="width: 50px; height :50px; border-radius: 15%;">
+								<img src="https://berserk.my.id/storage/<?= $row["foto_stnk"] ?>" style="width: 50px; height :50px; border-radius: 15%;">
+							</td>
+							<td>
+								<img src="https://berserk.my.id/storage/<?= $row["foto_kendaraan"] ?>" style="width: 50px; height :50px; border-radius: 15%;">
 							</td>
 							<!-- <td><img src="<?php
 												if ($row["foto_kendaraan"] = null) {
 													echo "https://images7.alphacoders.com/333/333852.jpg";
 												} else {
-													echo "" . $row["foto_kendaraan"];
+													echo "https://berserk.my.id/storage/" . $row["foto_kendaraan"];
 												}
 
 												?>" style="width: 75px; height :60px; border-radius: 15%;"></td> -->

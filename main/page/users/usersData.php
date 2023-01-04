@@ -1,4 +1,8 @@
 <style>
+	.flex {
+		display: flex;
+	}
+
 	.hapus {
 		border: 2px solid #FCE4EC;
 		text-align: center;
@@ -21,7 +25,7 @@
 		color: #FFFFFF;
 		background: #0277BD no-repeat 5px;
 		height: 10%;
-		display: inline;
+		display: flex;
 		width: fit-content;
 		/* padding-left: 1px;
 		padding-top: 3px;  */
@@ -90,9 +94,9 @@
 							<td><?= $row["alamat"] ?></td>
 							<td><?= $row["no_telepon"] ?></td>
 							<!-- <td><img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>" style="width: 70px; height :70px; border-radius: 15%;"></td> -->
-							<td><img src="<?= $row["avatar"] ?>" style="width: 50px; height :50px; border-radius: 15%;"></td>
+							<td><img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>" style="width: 50px; height :50px; border-radius: 15%;"></td>
 
-							<td>
+							<td class="flex">
 								<a class=" detail" href="?page=users&aksi=detail&id=<?= $row["id"]; ?>">Detail</a>
 								<a class="hapus" href="page/users/delete.php?id=<?= $row['id']; ?> ">Hapus</a>
 

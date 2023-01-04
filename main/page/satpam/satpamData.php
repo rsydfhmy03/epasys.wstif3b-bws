@@ -84,15 +84,8 @@
 							<td><?= $row["nama"] ?></td>
 							<td><?= $row["email"] ?></td>
 							<td><?= $row["alamat"] ?></td>
-							<!-- <td><img src="<?= $row["avatar"] ?>" width="100%" height="100%"></td> -->
-							<td><img src="<?php
-											if ($row["avatar"] = "") {
-												echo "https://images7.alphacoders.com/333/333852.jpg";
-											} else {
-												echo $row["avatar"];
-											}
+							<td><img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>" style="width: 70px; height :70px; border-radius: 15%;"></td>
 
-											?>" style="width: 70px; height :70px; border-radius: 15%;"></td>
 							<!-- <td><img src="https://images7.alphacoders.com/333/333852.jpg" style="border-radius: 15%; width:70px; height: 70px;"></td> -->
 							<td>
 								<a class="detail" href="?page=satpam&aksi=detail&id=<?= $row["id"]; ?>">Detail</a>

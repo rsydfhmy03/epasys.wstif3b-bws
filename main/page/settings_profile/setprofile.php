@@ -126,20 +126,29 @@
                 </li>
             </ul>
         </div>
-        <!-- <a href="#" class="btn-download">
-            <i class='bx bxs-user'></i>
-            <span class="text">Tambah Satpam</span>
-        </a> -->
+
     </div>
+    <?php
+    // include 'functions.php';
+    // $data = query("SELECT * FROM employees WHERE role='SATPAM'");
+    include 'profile.php';
+    // $data = query("SELECT * FROM vechiles");
+    $data = new profile();
+    $result = $data->query("SELECT * FROM employees WHERE role='TEKNISI' ")[0];
+    // foreach ($result as $row) :
+    // var_dump($result);
+    // while ($row = mysqli_fetch_assoc($result)) :
+    ?>
     <div class="card">
         <div class="card-image">
             <img src="https://i.pinimg.com/originals/42/84/71/428471d4f6c147b88ee7c2cff3efc4cb.jpg" alt="">
         </div>
         <div class="profile-image">
-            <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt="">
+            <!-- <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt=""> -->
+            <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="">
         </div>
         <div class="card-content">
-            <h3>Istik Lailiah</h3>
+            <h3><?= $result["nama"] ?></h3>
             <div class="info">
                 <h3></h3>
                 <!-- <div class="info_data">
@@ -153,11 +162,11 @@
           </div>
         </div> -->
                 <div class="card-body">
-                    <p>Email: istiklailiah@gmail.com</p>
+                    <p>Email: <?= $result["email"] ?></p>
 
-                    <p>Phone: +6282335333427</p>
-                    <p>Alamat: Bondowoso</p>
-                    <p>Deskripsi : Teknisi LAB AJK</p>
+                    <p>Phone: <?= $result["no_telepon"] ?></p>
+                    <p>Alamat: <?= $result["alamat"] ?></p>
+                    <p>Deskripsi : <?= $result["deskripsi"] ?></p>
 
                 </div>
             </div>

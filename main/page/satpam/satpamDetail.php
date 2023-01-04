@@ -245,13 +245,9 @@ $result = $data->query("SELECT * FROM employees WHERE role='SATPAM' AND id=$id")
   </div>
   <div class="wrapper">
     <div class="left">
-      <!-- <img src="https://s3.zerochan.net/240/45/30/2649045.jpg" 
-        alt="user" width="60%" height="70%"> -->
-      <img src="assets/images/default_avatar.jpg" alt="user" width="60%" height="70%">
-      <!-- <img src="https://images7.alphacoders.com/333/333852.jpg" 
-        alt="user" width="90%"> -->
-      <!-- <img src="<?= $result["avatar"] ?>" 
-        alt="user" width="90%" alt="foto_kendaraan"> -->
+
+      <!-- <img src="https://berserk.my.id/storage/<?= $row["avatar"] ?>"> -->
+      <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>">
 
       <h4><?= $result["nama"] ?></h4>
       <p><?= $result["role"] ?></p>
