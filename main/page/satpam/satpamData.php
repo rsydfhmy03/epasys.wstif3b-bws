@@ -43,10 +43,7 @@
 				</li>
 			</ul>
 		</div>
-		<!-- <a href="#" class="btn-download">
-			<i class='bx bxs-user'></i>
-			<span class="text">Tambah Satpam</span>
-		</a> -->
+
 	</div>
 
 	<div class="table-data">

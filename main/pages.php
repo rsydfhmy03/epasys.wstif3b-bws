@@ -44,6 +44,8 @@ if ($page == "vehicle") {
         include "page/settings_profile/setprofile.php";
     } elseif ($aksi == "update") {
         include "page/settings_profile/edit.php";
+    } elseif ($aksi == "prosesEdit") {
+        include "page/settings_profile/prosesEdit.php";
     }
 } elseif ($page == "laporan") {
     include "page/laporan/reportAct.php";

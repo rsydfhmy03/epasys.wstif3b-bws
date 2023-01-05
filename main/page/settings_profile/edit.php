@@ -269,7 +269,7 @@
         // var_dump($result);
 
         ?>
-        <form action="" method="post">
+        <form action="" method="post" id="formEdit">
             <!-- <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt=""> -->
             <?php
             if ($result['avatar'] == '') {
@@ -294,7 +294,7 @@
                 </div>
                 <div class="inputBox">
                     <span>Update your pic :</span>
-                    <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
+                    <input type="file" name="avatar" accept="image/jpg, image/jpeg, image/png" class="box">
 
                     <!-- <input type="password" name="update_pass" disabled value="01211" class="box"> -->
                     <span>No telephone :</span>
@@ -308,7 +308,7 @@
                     <input type="password" name="Cpassword" class="box">
                 </div>
             </div>
-            <button type="submit" name="ubahSatpam" class="btn" id="btn-update" value="Update">Update Profile</button>
+            <button type="submit" name="Update" class="btn" id="btn-update" value="Update">Update Profile</button>
             <a href="?page=myProfile" class="back-btn">Kembali</a>
         </form>
 
@@ -317,3 +317,74 @@
 
 
 </main>
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Dapatkan element form
+        var form = $("#formEdit");
+
+        // Submit form
+        form.submit(function(event) {
+            // Hindari submit form secara default
+            event.preventDefault();
+
+            // Dapatkan nama satpam yang diinputkan
+            var nama = $("#nama").val();
+
+            // Tampilkan konfirmasi alert
+            Swal.fire({
+                title: "Update Profile",
+                text: "Apakah Anda yakin ingin mengupdate profile dengan nama " + nama + "?",
+                type: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya",
+                cancelButtonText: "Tidak"
+            }).then(function(result) {
+                // Jika user mengklik tombol "Ya", kirim data form ke file PHP
+                if (result.value) {
+                    // Dapatkan data form
+                    var formData = new FormData(form[0]);
+
+                    // Kirim data form ke file PHP
+                    sendData(formData);
+                }
+            });
+        });
+
+        function sendData(formData) {
+            // Membuat object AJAX
+            $.ajax({
+                url: "?page=myProfile&aksi=prosesEdit", // URL file PHP yang akan menerima dan mengolah data form
+                type: "POST", // Metode pengiriman data
+                data: formData, // Data yang akan dikirim ke file PHP
+                contentType: false, // Tipe konten dari data yang dikirim
+                cache: false, // Menonaktifkan cache untuk data yang dikirim
+                processData: false, // Menonaktifkan proses pengolahan data
+                success: function(data) { // Fungsi yang akan dijalankan jika pengiriman data berhasil
+                    // Tampilkan alert SweetAlert berdasarkan data yang diterima dari file PHP
+                    if (data == "sukses") {
+                        Swal.fire({
+                            title: "Berhasil!",
+                            text: "Data berhasil di Update.",
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then(function() {
+                            window.location = "?page=myProfile"; // Redirect ke halaman settings
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Gagal!",
+                            text: "Gagal mengupdate Data. Silakan coba lagi.",
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        });
+                    }
+                }
+            });
+        }
+    });
+</script>

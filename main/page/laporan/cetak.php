@@ -95,11 +95,11 @@ while ($row = mysqli_fetch_array($hasil)) {
     // // tambahkan nilai variabel counter
     // $counter++;
     // tampilkan data lainnya
-    $pdf->Cell(30, 20, $row['merek'], 1, 0);
-    $pdf->Cell(30, 20, $row['nama_users'], 1, 0);
-    $pdf->Cell(50, 20, $row['alamat_users'], 1, 0);
-    $pdf->Cell(30, 20, $row['nama_satpam'], 1, 0);
-    $pdf->Cell(50, 20, $row['created_at'], 1, 1);
+    $pdf->Cell(40, 20, $row['merek'], 2, 0);
+    $pdf->Cell(40, 20, $row['nama_users'], 2, 0);
+    $pdf->Cell(50, 20, $row['alamat_users'], 2, 0);
+    $pdf->Cell(40, 20, $row['nama_satpam'], 2, 0);
+    $pdf->Cell(50, 20, $row['created_at'], 2, 1);
 
     $x = $pdf->GetX();
     $y = $pdf->GetY();
