@@ -270,7 +270,15 @@
 
         ?>
         <form action="" method="post">
-            <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt="">
+            <!-- <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt=""> -->
+            <?php
+            if ($result['avatar'] == '') {
+                echo '<img src="assets/images/default-avatar.png">';
+            } else {
+                // echo '<img src="' . $result['image'] . '">';
+                echo '<img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png">';
+            }
+            ?>
             <div class="flex">
                 <div class="inputBox">
                     <input type="hidden" name="id" id="id" value="<?= $result["id"] ?>">
@@ -285,19 +293,19 @@
 
                 </div>
                 <div class="inputBox">
-                    <span>update your pic :</span>
+                    <span>Update your pic :</span>
                     <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
 
                     <!-- <input type="password" name="update_pass" disabled value="01211" class="box"> -->
-                    <span>no telephone :</span>
-                    <input type="text" name="no_hp" value="<?= $result["no_telepon"] ?>" class="box">
+                    <span>No telephone :</span>
+                    <input type="text" name="no_hp" accept="" value="<?= $result["no_telepon"] ?>" class="box">
                     <!-- <span>Role :</span>
              -->
                     <span>New password :</span>
                     <input type="password" name="password" class="box">
 
                     <span>Confirm New password :</span>
-                    <input type="password" name="password" class="box">
+                    <input type="password" name="Cpassword" class="box">
                 </div>
             </div>
             <button type="submit" name="ubahSatpam" class="btn" id="btn-update" value="Update">Update Profile</button>

@@ -129,15 +129,15 @@
 
     </div>
     <?php
-    // include 'functions.php';
-    // $data = query("SELECT * FROM employees WHERE role='SATPAM'");
+
     include 'profile.php';
-    // $data = query("SELECT * FROM vechiles");
+
+    $status = $_SESSION['role'];
     $data = new profile();
     $result = $data->query("SELECT * FROM employees WHERE role='TEKNISI' ")[0];
-    // foreach ($result as $row) :
-    // var_dump($result);
-    // while ($row = mysqli_fetch_assoc($result)) :
+
+    // var_dump($_SESSION);
+
     ?>
     <div class="card">
         <div class="card-image">
@@ -145,22 +145,13 @@
         </div>
         <div class="profile-image">
             <!-- <img src="https://berserk.my.id/storage/assets/karyawan/cxQIvXXsD9ZWKQSGd6XK8i8bjEm5s4pVlRT4cbn8.png" alt=""> -->
-            <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt="">
+            <!-- <img src="https://berserk.my.id/storage/<?= $result["avatar"] ?>" alt=""> -->
+            <img src="assets/images/default_avatar.jpg" alt="">
         </div>
         <div class="card-content">
             <h3><?= $result["nama"] ?></h3>
             <div class="info">
                 <h3></h3>
-                <!-- <div class="info_data">
-             <div class="data">
-                <h4>Nama</h4>
-                <p>Fahmy Rosyadi</p>
-             </div>
-             <div class="data">
-               <h4>Email</h4>
-                <p>abc@gmail.com</p>
-          </div>
-        </div> -->
                 <div class="card-body">
                     <p>Email: <?= $result["email"] ?></p>
 
@@ -177,7 +168,7 @@
         <a href="#" class="fab fa-instagram"></a>
         <a href="#" class="fab fa-twitter"></a>
         <a href="#" class="fab fa-whatsapp"></a> -->
-            <a class="btn btn-primary" href="?page=myProfile&aksi=update&id=1">Edit Profile</a>
+            <a class="btn btn-primary" href="?page=myProfile&aksi=update&id=<?= $result['id'] ?>">Edit Profile</a>
         </div>
     </div>
     <!--Profile card end-->
