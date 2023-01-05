@@ -86,16 +86,18 @@
 			Filter Laporan
 		</div>
 		<div class="card-body">
-			<form>
+			<form action="page/laporan/cetak.php" method="get">
 				<div class="form-group">
 					<label for="startDate">Dari Tanggal</label>
-					<input type="date" class="form-control" id="startDate">
+					<input type="date" class="form-control" id="startDate" name="startDate">
 				</div>
 				<div class="form-group">
 					<label for="endDate">Sampai Tanggal</label>
-					<input type="date" class="form-control" id="endDate">
+					<input type="date" class="form-control" id="endDate" name="endDate">
 				</div>
-				<a class="btn btn-primary">Cetak Laporan</a>
+				<!-- <a class="btn btn-primary" href="page/laporan/cetak.php">Cetak Laporan</a> -->
+				<!-- <a class="btn btn-primary" href="page/laporan/cetak.php?startDate=<?php echo $startDate; ?>&endDate=<?php echo $endDate; ?>">Cetak Laporan</a> -->
+				<button type="submit" class="btn btn-primary">Cetak Laporan</button>
 			</form>
 		</div>
 	</div>
