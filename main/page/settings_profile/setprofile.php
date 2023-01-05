@@ -177,7 +177,7 @@
         <a href="#" class="fab fa-instagram"></a>
         <a href="#" class="fab fa-twitter"></a>
         <a href="#" class="fab fa-whatsapp"></a> -->
-            <a class="btn btn-primary">Edit Profile</a>
+            <a class="btn btn-primary" href="?page=myProfile&aksi=update&id=1">Edit Profile</a>
         </div>
     </div>
     <!--Profile card end-->
