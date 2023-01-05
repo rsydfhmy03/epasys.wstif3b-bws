@@ -24,8 +24,8 @@ if (isset($_POST["update"])) {
     $gambar = htmlspecialchars($_POST["avatar"]);
     // $password = mysqli_real_escape_string($data["password"]);
     // $password = mysqli_real_escape_string($data["password"]);
-    $password = mysqli_real_escape_string($koneksi, $data["password"]);
-    $password2 = mysqli_real_escape_string($koneksi, $data["Cpassword"]);
+    $password = mysqli_real_escape_string($koneksi, $_POST["password"]);
+    $password2 = mysqli_real_escape_string($koneksi, $_POST["Cpassword"]);
 
     if ($password !== $password2) {
         echo "gagal";
@@ -42,7 +42,7 @@ if (isset($_POST["update"])) {
                 deskripsi='$deskripsi',
                 alamat = '$alamat',
                 no_telepon= '$no_telepon',
-                gambar='$gambar',
+                avatar='$gambar',
                 password='$encPassword'
                 WHERE id = $id";
     $hasil_query = mysqli_query($koneksi, $query);

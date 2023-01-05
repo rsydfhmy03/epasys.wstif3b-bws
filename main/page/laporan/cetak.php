@@ -95,11 +95,11 @@ while ($row = mysqli_fetch_array($hasil)) {
     // // tambahkan nilai variabel counter
     // $counter++;
     // tampilkan data lainnya
-    $pdf->Cell(40, 20, $row['merek'], 2, 0);
-    $pdf->Cell(40, 20, $row['nama_users'], 2, 0);
-    $pdf->Cell(50, 20, $row['alamat_users'], 2, 0);
-    $pdf->Cell(40, 20, $row['nama_satpam'], 2, 0);
-    $pdf->Cell(50, 20, $row['created_at'], 2, 1);
+    $pdf->Cell(30, 20, $row['merek'], 1, 0);
+    $pdf->Cell(30, 20, $row['nama_users'], 1, 0);
+    $pdf->Cell(50, 20, $row['alamat_users'], 1, 0);
+    $pdf->Cell(30, 20, $row['nama_satpam'], 1, 0);
+    $pdf->Cell(50, 20, $row['created_at'], 1, 1);
 
     $x = $pdf->GetX();
     $y = $pdf->GetY();
@@ -107,10 +107,10 @@ while ($row = mysqli_fetch_array($hasil)) {
     // $pdf->SetXY($x + 150, $y);
     // $pdf->Image('https://berserk.my.id/storage/' . $row['avatar'], $x + 50, $y, 20, 20);
     // $pdf->SetXY($x + 170, $y + 10);
-    $pdf->Image('https://berserk.my.id/storage/' . $row['foto_kendaraan'], $x, $y, 20, 20);
-    $pdf->SetXY($x + 50, $y);
-    $pdf->Image('https://berserk.my.id/storage/' . $row['avatar'], $x + 50, $y, 20, 20);
-    $pdf->SetXY($x + 100, $y + 20);
+    $pdf->Image('https://berserk.my.id/storage/' . $row['foto_kendaraan'], $x + 275, $y - 19, 20, 20);
+    $pdf->SetXY($x + 2, $y);
+    $pdf->Image('https://berserk.my.id/storage/' . $row['avatar'], $x + 210, $y - 19, 20, 20);
+    $pdf->SetXY($x + 0, $y + 0);
     // tambahkan nilai variabel counter
     $counter++;
 }
